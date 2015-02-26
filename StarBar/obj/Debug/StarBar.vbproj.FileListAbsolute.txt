@@ -1,0 +1,12 @@
+C:\Users\bledi\OneDrive\Detyra\VizualBazik\StarBar\StarBar\bin\Debug\StarBar.exe.config
+C:\Users\bledi\OneDrive\Detyra\VizualBazik\StarBar\StarBar\bin\Debug\StarBar.exe
+C:\Users\bledi\OneDrive\Detyra\VizualBazik\StarBar\StarBar\bin\Debug\StarBar.pdb
+C:\Users\bledi\OneDrive\Detyra\VizualBazik\StarBar\StarBar\bin\Debug\StarBar.xml
+C:\Users\bledi\OneDrive\Detyra\VizualBazik\StarBar\StarBar\obj\Debug\StarBar.login.resources
+C:\Users\bledi\OneDrive\Detyra\VizualBazik\StarBar\StarBar\obj\Debug\StarBar.Resources.resources
+C:\Users\bledi\OneDrive\Detyra\VizualBazik\StarBar\StarBar\obj\Debug\StarBar.vbproj.GenerateResource.Cache
+C:\Users\bledi\OneDrive\Detyra\VizualBazik\StarBar\StarBar\obj\Debug\StarBar.exe
+C:\Users\bledi\OneDrive\Detyra\VizualBazik\StarBar\StarBar\obj\Debug\StarBar.xml
+C:\Users\bledi\OneDrive\Detyra\VizualBazik\StarBar\StarBar\obj\Debug\StarBar.pdb
+C:\Users\bledi\OneDrive\Detyra\VizualBazik\StarBar\StarBar\obj\Debug\StarBar.AdminForm.resources
+C:\Users\bledi\OneDrive\Detyra\VizualBazik\StarBar\StarBar\obj\Debug\StarBar.ShtoPerdorues.resources
