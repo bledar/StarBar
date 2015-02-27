@@ -10,3 +10,7 @@ C:\Users\bledi\OneDrive\Detyra\VizualBazik\StarBar\StarBar\obj\Debug\StarBar.xml
 C:\Users\bledi\OneDrive\Detyra\VizualBazik\StarBar\StarBar\obj\Debug\StarBar.pdb
 C:\Users\bledi\OneDrive\Detyra\VizualBazik\StarBar\StarBar\obj\Debug\StarBar.AdminForm.resources
 C:\Users\bledi\OneDrive\Detyra\VizualBazik\StarBar\StarBar\obj\Debug\StarBar.ShtoPerdorues.resources
+C:\Users\bledi\OneDrive\Detyra\VizualBazik\StarBar\StarBar\obj\Debug\StarBar.PaneliShitjes.resources
+C:\Users\bledi\OneDrive\Detyra\VizualBazik\StarBar\StarBar\bin\Debug\StarBar.mdf
+C:\Users\bledi\OneDrive\Detyra\VizualBazik\StarBar\StarBar\bin\Debug\StarBar_log.ldf
+C:\Users\bledi\OneDrive\Detyra\VizualBazik\StarBar\StarBar\obj\Debug\StarBar.FshiUser.resources

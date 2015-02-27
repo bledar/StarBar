@@ -5,9 +5,15 @@ Imports System.Data.SqlClient
 Public Class DataBase
 
     Private sConnectionString As String _
-    = "User ID=AdminStarBar;Password=StarBar123;Initial Catalog=StarBar;Data Source=BLEDI-PC;"
+    = "Data Source=BLEDI-PC;Initial Catalog=StarBar;User ID=AdminStarBar;Password=StarBar123"
     Private objConn As New SqlConnection(sConnectionString)
-    Public niv_perdorusit As Integer = 0
+    Public SQLDA As SqlDataAdapter
+    Public SQLDS As DataSet
+    Private SQLCmd As SqlCommand
+    Private niv_perdorusit As Integer = 0
+
+    Public Numruesi As Integer
+
     Sub hapLidhjen()
         Try
             objConn.Open()
@@ -16,9 +22,31 @@ Public Class DataBase
         End Try
     End Sub
 
+    Public Sub ExeQuer(query As String)
+        Try
+            objConn.Open()
+
+            SQLCmd = New SqlCommand(query, objConn)
+
+            SQLDA = New SqlDataAdapter(SQLCmd)
+            SQLDS = New DataSet
+            Numruesi = SQLDA.Fill(SQLDS)
+            objConn.Close()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+
+            If objConn.State = ConnectionState.Open Then
+                objConn.Close()
+            End If
+
+
+        End Try
+
+    End Sub
+
     Function banLogin(emri, kodi)
         Dim qyery As New SqlCommand
-        qyery.CommandText = "SELECT * FROM Perdorues WHERE Emri like '" + emri + "' AND Kodi like '" + kodi + "';"
+        qyery.CommandText = "SELECT * FROM Perdorues WHERE Emri like '" + emri + "' AND Kodi like '" + kodi + "' COLLATE SQL_Latin1_General_CP1_CS_AS ;"
         qyery.Connection = objConn
         Dim lexues As SqlDataReader
         lexues = qyery.ExecuteReader
@@ -43,19 +71,16 @@ Public Class DataBase
         End Try
     End Sub
 
-    Sub shtoUser(Emri As String, Kodi As String, Niveli As Integer)
-        Dim query As String = "INSERT INTO Perdorues (Emri , Kodi , Niveli)" & _
-                              "VALUES( '" & Emri & "', '" & Kodi & "', '" & Niveli & "' )"
-
+    Function KaLidhje() As Boolean
         Try
-            Me.hapLidhjen()
-            Dim Komanda = New SqlCommand(query, objConn)
-            Komanda.ExecuteNonQuery()
-            MsgBox("Nje perdorues i ri u shtua me sukses!", MsgBoxStyle.Information)
-            Me.mbyllLidhjen()
+            objConn.Open()
+            objConn.Close()
+            Return True
         Catch ex As Exception
-            MsgBox("gabim ne exekutim :" + ex.Message)
+            MsgBox("Gabim ne DataBase: " + ex.Message)
+            Return False
         End Try
-    End Sub
+    End Function
+
 
 End Class

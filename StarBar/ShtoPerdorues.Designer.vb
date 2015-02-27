@@ -23,22 +23,22 @@ Partial Class ShtoPerdorues
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.RuajEmrin_t = New System.Windows.Forms.TextBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.RuajKodin_t = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.Label3 = New System.Windows.Forms.Label()
         Me.Admin_cb = New System.Windows.Forms.CheckBox()
-        Me.RuajEmrin_t = New System.Windows.Forms.TextBox()
-        Me.RuajKodin_t = New System.Windows.Forms.TextBox()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.RuajPerdorues_b = New System.Windows.Forms.Button()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.Panel1.SuspendLayout()
-        Me.Panel2.SuspendLayout()
-        Me.Panel3.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel2.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel3.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
@@ -52,6 +52,24 @@ Partial Class ShtoPerdorues
         Me.Panel1.Size = New System.Drawing.Size(350, 60)
         Me.Panel1.TabIndex = 0
         '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = Global.StarBar.My.Resources.Resources.Folders_OS_User_No_Frame_Metro_icon
+        Me.PictureBox1.Location = New System.Drawing.Point(4, 8)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(46, 45)
+        Me.PictureBox1.TabIndex = 1
+        Me.PictureBox1.TabStop = False
+        '
+        'RuajEmrin_t
+        '
+        Me.RuajEmrin_t.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.RuajEmrin_t.Location = New System.Drawing.Point(56, 18)
+        Me.RuajEmrin_t.MaxLength = 30
+        Me.RuajEmrin_t.Name = "RuajEmrin_t"
+        Me.RuajEmrin_t.Size = New System.Drawing.Size(278, 26)
+        Me.RuajEmrin_t.TabIndex = 0
+        '
         'Panel2
         '
         Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
@@ -61,6 +79,25 @@ Partial Class ShtoPerdorues
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(350, 60)
         Me.Panel2.TabIndex = 1
+        '
+        'PictureBox2
+        '
+        Me.PictureBox2.Image = Global.StarBar.My.Resources.Resources.Security_Password_2_icon
+        Me.PictureBox2.Location = New System.Drawing.Point(4, 10)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(46, 45)
+        Me.PictureBox2.TabIndex = 2
+        Me.PictureBox2.TabStop = False
+        '
+        'RuajKodin_t
+        '
+        Me.RuajKodin_t.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.RuajKodin_t.Location = New System.Drawing.Point(56, 19)
+        Me.RuajKodin_t.MaxLength = 30
+        Me.RuajKodin_t.Name = "RuajKodin_t"
+        Me.RuajKodin_t.Size = New System.Drawing.Size(278, 26)
+        Me.RuajKodin_t.TabIndex = 1
+        Me.RuajKodin_t.UseSystemPasswordChar = True
         '
         'Label1
         '
@@ -91,16 +128,6 @@ Partial Class ShtoPerdorues
         Me.Panel3.Size = New System.Drawing.Size(350, 57)
         Me.Panel3.TabIndex = 2
         '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(51, 233)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(198, 20)
-        Me.Label3.TabIndex = 5
-        Me.Label3.Text = "Ka te drejte administratori?"
-        '
         'Admin_cb
         '
         Me.Admin_cb.AutoSize = True
@@ -112,24 +139,15 @@ Partial Class ShtoPerdorues
         Me.Admin_cb.Text = "Admin"
         Me.Admin_cb.UseVisualStyleBackColor = True
         '
-        'RuajEmrin_t
+        'Label3
         '
-        Me.RuajEmrin_t.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RuajEmrin_t.Location = New System.Drawing.Point(56, 18)
-        Me.RuajEmrin_t.MaxLength = 30
-        Me.RuajEmrin_t.Name = "RuajEmrin_t"
-        Me.RuajEmrin_t.Size = New System.Drawing.Size(278, 26)
-        Me.RuajEmrin_t.TabIndex = 0
-        '
-        'RuajKodin_t
-        '
-        Me.RuajKodin_t.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RuajKodin_t.Location = New System.Drawing.Point(56, 19)
-        Me.RuajKodin_t.MaxLength = 30
-        Me.RuajKodin_t.Name = "RuajKodin_t"
-        Me.RuajKodin_t.Size = New System.Drawing.Size(278, 26)
-        Me.RuajKodin_t.TabIndex = 1
-        Me.RuajKodin_t.UseSystemPasswordChar = True
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(51, 233)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(198, 20)
+        Me.Label3.TabIndex = 5
+        Me.Label3.Text = "Ka te drejte administratori?"
         '
         'RuajPerdorues_b
         '
@@ -142,24 +160,6 @@ Partial Class ShtoPerdorues
         Me.RuajPerdorues_b.TabIndex = 4
         Me.RuajPerdorues_b.Text = "Ruaje"
         Me.RuajPerdorues_b.UseVisualStyleBackColor = True
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = Global.StarBar.My.Resources.Resources.Folders_OS_User_No_Frame_Metro_icon
-        Me.PictureBox1.Location = New System.Drawing.Point(4, 8)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(46, 45)
-        Me.PictureBox1.TabIndex = 1
-        Me.PictureBox1.TabStop = False
-        '
-        'PictureBox2
-        '
-        Me.PictureBox2.Image = Global.StarBar.My.Resources.Resources.Security_Password_2_icon
-        Me.PictureBox2.Location = New System.Drawing.Point(4, 10)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(46, 45)
-        Me.PictureBox2.TabIndex = 2
-        Me.PictureBox2.TabStop = False
         '
         'ShtoPerdorues
         '
@@ -180,12 +180,12 @@ Partial Class ShtoPerdorues
         Me.Text = "Shto Perdorues"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

@@ -22,36 +22,36 @@ Partial Class login
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.perdorusi_t = New System.Windows.Forms.TextBox()
-        Me.fjalkalimi_t = New System.Windows.Forms.TextBox()
+        Me.LoginEmri_t = New System.Windows.Forms.TextBox()
+        Me.LognKodi_t = New System.Windows.Forms.TextBox()
         Me.logohu_b = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.SuspendLayout()
         '
-        'perdorusi_t
+        'LoginEmri_t
         '
-        Me.perdorusi_t.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.perdorusi_t.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.perdorusi_t.Location = New System.Drawing.Point(486, 206)
-        Me.perdorusi_t.Name = "perdorusi_t"
-        Me.perdorusi_t.Size = New System.Drawing.Size(242, 29)
-        Me.perdorusi_t.TabIndex = 0
-        Me.perdorusi_t.Text = "admin"
+        Me.LoginEmri_t.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.LoginEmri_t.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LoginEmri_t.Location = New System.Drawing.Point(486, 206)
+        Me.LoginEmri_t.Name = "LoginEmri_t"
+        Me.LoginEmri_t.Size = New System.Drawing.Size(242, 29)
+        Me.LoginEmri_t.TabIndex = 0
+        Me.LoginEmri_t.Text = "admin"
         '
-        'fjalkalimi_t
+        'LognKodi_t
         '
-        Me.fjalkalimi_t.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.fjalkalimi_t.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.fjalkalimi_t.Location = New System.Drawing.Point(487, 300)
-        Me.fjalkalimi_t.Name = "fjalkalimi_t"
-        Me.fjalkalimi_t.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.fjalkalimi_t.Size = New System.Drawing.Size(242, 29)
-        Me.fjalkalimi_t.TabIndex = 1
-        Me.fjalkalimi_t.Text = "123"
-        Me.fjalkalimi_t.UseSystemPasswordChar = True
-        Me.fjalkalimi_t.WordWrap = False
+        Me.LognKodi_t.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.LognKodi_t.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LognKodi_t.Location = New System.Drawing.Point(487, 300)
+        Me.LognKodi_t.Name = "LognKodi_t"
+        Me.LognKodi_t.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.LognKodi_t.Size = New System.Drawing.Size(242, 29)
+        Me.LognKodi_t.TabIndex = 1
+        Me.LognKodi_t.Text = "123456"
+        Me.LognKodi_t.UseSystemPasswordChar = True
+        Me.LognKodi_t.WordWrap = False
         '
         'logohu_b
         '
@@ -104,8 +104,8 @@ Partial Class login
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.logohu_b)
-        Me.Controls.Add(Me.fjalkalimi_t)
-        Me.Controls.Add(Me.perdorusi_t)
+        Me.Controls.Add(Me.LognKodi_t)
+        Me.Controls.Add(Me.LoginEmri_t)
         Me.Controls.Add(Me.Panel1)
         Me.Name = "login"
         Me.Text = "* StarBar *"
@@ -114,8 +114,8 @@ Partial Class login
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents perdorusi_t As System.Windows.Forms.TextBox
-    Friend WithEvents fjalkalimi_t As System.Windows.Forms.TextBox
+    Friend WithEvents LoginEmri_t As System.Windows.Forms.TextBox
+    Friend WithEvents LognKodi_t As System.Windows.Forms.TextBox
     Friend WithEvents logohu_b As System.Windows.Forms.Button
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents Label2 As System.Windows.Forms.Label
