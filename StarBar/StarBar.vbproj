@@ -69,6 +69,7 @@
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -95,6 +96,12 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="DataBase.vb" />
+    <Compile Include="FshiProdukt.Designer.vb">
+      <DependentUpon>FshiProdukt.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FshiProdukt.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FshiUser.Designer.vb">
       <DependentUpon>FshiUser.vb</DependentUpon>
     </Compile>
@@ -123,6 +130,18 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="NdryshoKredencialet.Designer.vb">
+      <DependentUpon>NdryshoKredencialet.vb</DependentUpon>
+    </Compile>
+    <Compile Include="NdryshoKredencialet.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NdryshoProduktin.Designer.vb">
+      <DependentUpon>NdryshoProduktin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="NdryshoProduktin.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="PaneliShitjes.Designer.vb">
       <DependentUpon>PaneliShitjes.vb</DependentUpon>
     </Compile>
@@ -135,18 +154,34 @@
     <Compile Include="ShtoPerdorues.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ShtoProdukt.Designer.vb">
+      <DependentUpon>ShtoProdukt.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ShtoProdukt.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="StarBarDataSet.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>StarBarDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="StarBarDataSet.vb">
-      <DependentUpon>StarBarDataSet.xsd</DependentUpon>
+    <Compile Include="StarBarDataSet1.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StarBarDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="StarBarDataSet2.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StarBarDataSet2.xsd</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="AdminForm.resx">
       <DependentUpon>AdminForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FshiProdukt.resx">
+      <DependentUpon>FshiProdukt.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FshiUser.resx">
       <DependentUpon>FshiUser.vb</DependentUpon>
@@ -160,11 +195,20 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="NdryshoKredencialet.resx">
+      <DependentUpon>NdryshoKredencialet.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NdryshoProduktin.resx">
+      <DependentUpon>NdryshoProduktin.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PaneliShitjes.resx">
       <DependentUpon>PaneliShitjes.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ShtoPerdorues.resx">
       <DependentUpon>ShtoPerdorues.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShtoProdukt.resx">
+      <DependentUpon>ShtoProdukt.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -188,6 +232,28 @@
     </None>
     <None Include="StarBarDataSet.xss">
       <DependentUpon>StarBarDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="StarBarDataSet1.xsc">
+      <DependentUpon>StarBarDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="StarBarDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>StarBarDataSet1.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="StarBarDataSet1.xss">
+      <DependentUpon>StarBarDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="StarBarDataSet2.xsc">
+      <DependentUpon>StarBarDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="StarBarDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>StarBarDataSet2.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="StarBarDataSet2.xss">
+      <DependentUpon>StarBarDataSet2.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -326,15 +392,6 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="StarBar.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="StarBar_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>StarBar.mdf</DependentUpon>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5">
       <Visible>False</Visible>
       <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
@@ -350,6 +407,18 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Save-as-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ecommerce-Price-Tag-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bag-Quantity-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Header.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

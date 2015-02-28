@@ -38,7 +38,7 @@ Partial Class login
         Me.LoginEmri_t.Name = "LoginEmri_t"
         Me.LoginEmri_t.Size = New System.Drawing.Size(242, 29)
         Me.LoginEmri_t.TabIndex = 0
-        Me.LoginEmri_t.Text = "admin"
+        Me.LoginEmri_t.Text = "prova"
         '
         'LognKodi_t
         '
@@ -49,7 +49,7 @@ Partial Class login
         Me.LognKodi_t.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.LognKodi_t.Size = New System.Drawing.Size(242, 29)
         Me.LognKodi_t.TabIndex = 1
-        Me.LognKodi_t.Text = "123456"
+        Me.LognKodi_t.Text = "teknike"
         Me.LognKodi_t.UseSystemPasswordChar = True
         Me.LognKodi_t.WordWrap = False
         '

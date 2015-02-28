@@ -74,7 +74,7 @@ Partial Class FshiUser
         Me.FshiPerdorues_b.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FshiPerdorues_b.Image = Global.StarBar.My.Resources.Resources.Actions_application_exit_icon
         Me.FshiPerdorues_b.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.FshiPerdorues_b.Location = New System.Drawing.Point(96, 123)
+        Me.FshiPerdorues_b.Location = New System.Drawing.Point(112, 126)
         Me.FshiPerdorues_b.Name = "FshiPerdorues_b"
         Me.FshiPerdorues_b.Size = New System.Drawing.Size(200, 51)
         Me.FshiPerdorues_b.TabIndex = 2

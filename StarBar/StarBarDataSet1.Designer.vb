@@ -20,12 +20,12 @@ Option Explicit On
  Global.System.ComponentModel.DesignerCategoryAttribute("code"),  _
  Global.System.ComponentModel.ToolboxItem(true),  _
  Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema"),  _
- Global.System.Xml.Serialization.XmlRootAttribute("StarBarDataSet"),  _
+ Global.System.Xml.Serialization.XmlRootAttribute("StarBarDataSet1"),  _
  Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")>  _
-Partial Public Class StarBarDataSet
+Partial Public Class StarBarDataSet1
     Inherits Global.System.Data.DataSet
     
-    Private tablePerdorues As PerdoruesDataTable
+    Private tableProdukte As ProdukteDataTable
     
     Private _schemaSerializationMode As Global.System.Data.SchemaSerializationMode = Global.System.Data.SchemaSerializationMode.IncludeSchema
     
@@ -56,8 +56,8 @@ Partial Public Class StarBarDataSet
         If (Me.DetermineSchemaSerializationMode(info, context) = Global.System.Data.SchemaSerializationMode.IncludeSchema) Then
             Dim ds As Global.System.Data.DataSet = New Global.System.Data.DataSet()
             ds.ReadXmlSchema(New Global.System.Xml.XmlTextReader(New Global.System.IO.StringReader(strSchema)))
-            If (Not (ds.Tables("Perdorues")) Is Nothing) Then
-                MyBase.Tables.Add(New PerdoruesDataTable(ds.Tables("Perdorues")))
+            If (Not (ds.Tables("Produkte")) Is Nothing) Then
+                MyBase.Tables.Add(New ProdukteDataTable(ds.Tables("Produkte")))
             End If
             Me.DataSetName = ds.DataSetName
             Me.Prefix = ds.Prefix
@@ -80,9 +80,9 @@ Partial Public Class StarBarDataSet
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
      Global.System.ComponentModel.Browsable(false),  _
      Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)>  _
-    Public ReadOnly Property Perdorues() As PerdoruesDataTable
+    Public ReadOnly Property Produkte() As ProdukteDataTable
         Get
-            Return Me.tablePerdorues
+            Return Me.tableProdukte
         End Get
     End Property
     
@@ -128,7 +128,7 @@ Partial Public Class StarBarDataSet
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
     Public Overrides Function Clone() As Global.System.Data.DataSet
-        Dim cln As StarBarDataSet = CType(MyBase.Clone,StarBarDataSet)
+        Dim cln As StarBarDataSet1 = CType(MyBase.Clone,StarBarDataSet1)
         cln.InitVars
         cln.SchemaSerializationMode = Me.SchemaSerializationMode
         Return cln
@@ -153,8 +153,8 @@ Partial Public Class StarBarDataSet
             Me.Reset
             Dim ds As Global.System.Data.DataSet = New Global.System.Data.DataSet()
             ds.ReadXml(reader)
-            If (Not (ds.Tables("Perdorues")) Is Nothing) Then
-                MyBase.Tables.Add(New PerdoruesDataTable(ds.Tables("Perdorues")))
+            If (Not (ds.Tables("Produkte")) Is Nothing) Then
+                MyBase.Tables.Add(New ProdukteDataTable(ds.Tables("Produkte")))
             End If
             Me.DataSetName = ds.DataSetName
             Me.Prefix = ds.Prefix
@@ -188,10 +188,10 @@ Partial Public Class StarBarDataSet
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
     Friend Overloads Sub InitVars(ByVal initTable As Boolean)
-        Me.tablePerdorues = CType(MyBase.Tables("Perdorues"),PerdoruesDataTable)
+        Me.tableProdukte = CType(MyBase.Tables("Produkte"),ProdukteDataTable)
         If (initTable = true) Then
-            If (Not (Me.tablePerdorues) Is Nothing) Then
-                Me.tablePerdorues.InitVars
+            If (Not (Me.tableProdukte) Is Nothing) Then
+                Me.tableProdukte.InitVars
             End If
         End If
     End Sub
@@ -199,18 +199,18 @@ Partial Public Class StarBarDataSet
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
     Private Sub InitClass()
-        Me.DataSetName = "StarBarDataSet"
+        Me.DataSetName = "StarBarDataSet1"
         Me.Prefix = ""
-        Me.Namespace = "http://tempuri.org/StarBarDataSet.xsd"
+        Me.Namespace = "http://tempuri.org/StarBarDataSet1.xsd"
         Me.EnforceConstraints = true
         Me.SchemaSerializationMode = Global.System.Data.SchemaSerializationMode.IncludeSchema
-        Me.tablePerdorues = New PerdoruesDataTable()
-        MyBase.Tables.Add(Me.tablePerdorues)
+        Me.tableProdukte = New ProdukteDataTable()
+        MyBase.Tables.Add(Me.tableProdukte)
     End Sub
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-    Private Function ShouldSerializePerdorues() As Boolean
+    Private Function ShouldSerializeProdukte() As Boolean
         Return false
     End Function
     
@@ -225,7 +225,7 @@ Partial Public Class StarBarDataSet
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
     Public Shared Function GetTypedDataSetSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
-        Dim ds As StarBarDataSet = New StarBarDataSet()
+        Dim ds As StarBarDataSet1 = New StarBarDataSet1()
         Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
         Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
         Dim any As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
@@ -273,29 +273,29 @@ Partial Public Class StarBarDataSet
     End Function
     
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-    Public Delegate Sub PerdoruesRowChangeEventHandler(ByVal sender As Object, ByVal e As PerdoruesRowChangeEvent)
+    Public Delegate Sub ProdukteRowChangeEventHandler(ByVal sender As Object, ByVal e As ProdukteRowChangeEvent)
     
     '''<summary>
     '''Represents the strongly named DataTable class.
     '''</summary>
     <Global.System.Serializable(),  _
      Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
-    Partial Public Class PerdoruesDataTable
-        Inherits Global.System.Data.TypedTableBase(Of PerdoruesRow)
+    Partial Public Class ProdukteDataTable
+        Inherits Global.System.Data.TypedTableBase(Of ProdukteRow)
         
         Private columnID As Global.System.Data.DataColumn
         
-        Private columnEmri As Global.System.Data.DataColumn
+        Private columnEmriP As Global.System.Data.DataColumn
         
-        Private columnKodi As Global.System.Data.DataColumn
+        Private columnCmimiP As Global.System.Data.DataColumn
         
-        Private columnNiveli As Global.System.Data.DataColumn
+        Private columnSasiaP As Global.System.Data.DataColumn
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub New()
             MyBase.New
-            Me.TableName = "Perdorues"
+            Me.TableName = "Produkte"
             Me.BeginInit
             Me.InitClass
             Me.EndInit
@@ -336,25 +336,25 @@ Partial Public Class StarBarDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property EmriColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property EmriPColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnEmri
+                Return Me.columnEmriP
             End Get
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property KodiColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property CmimiPColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnKodi
+                Return Me.columnCmimiP
             End Get
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property NiveliColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property SasiaPColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnNiveli
+                Return Me.columnSasiaP
             End Get
         End Property
         
@@ -369,50 +369,50 @@ Partial Public Class StarBarDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Default ReadOnly Property Item(ByVal index As Integer) As PerdoruesRow
+        Public Default ReadOnly Property Item(ByVal index As Integer) As ProdukteRow
             Get
-                Return CType(Me.Rows(index),PerdoruesRow)
+                Return CType(Me.Rows(index),ProdukteRow)
             End Get
         End Property
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Event PerdoruesRowChanging As PerdoruesRowChangeEventHandler
+        Public Event ProdukteRowChanging As ProdukteRowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Event PerdoruesRowChanged As PerdoruesRowChangeEventHandler
+        Public Event ProdukteRowChanged As ProdukteRowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Event PerdoruesRowDeleting As PerdoruesRowChangeEventHandler
+        Public Event ProdukteRowDeleting As ProdukteRowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Event PerdoruesRowDeleted As PerdoruesRowChangeEventHandler
+        Public Event ProdukteRowDeleted As ProdukteRowChangeEventHandler
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Sub AddPerdoruesRow(ByVal row As PerdoruesRow)
+        Public Overloads Sub AddProdukteRow(ByVal row As ProdukteRow)
             Me.Rows.Add(row)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Function AddPerdoruesRow(ByVal Emri As String, ByVal Kodi As String, ByVal Niveli As Integer) As PerdoruesRow
-            Dim rowPerdoruesRow As PerdoruesRow = CType(Me.NewRow,PerdoruesRow)
-            Dim columnValuesArray() As Object = New Object() {Nothing, Emri, Kodi, Niveli}
-            rowPerdoruesRow.ItemArray = columnValuesArray
-            Me.Rows.Add(rowPerdoruesRow)
-            Return rowPerdoruesRow
+        Public Overloads Function AddProdukteRow(ByVal EmriP As String, ByVal CmimiP As Integer, ByVal SasiaP As Integer) As ProdukteRow
+            Dim rowProdukteRow As ProdukteRow = CType(Me.NewRow,ProdukteRow)
+            Dim columnValuesArray() As Object = New Object() {Nothing, EmriP, CmimiP, SasiaP}
+            rowProdukteRow.ItemArray = columnValuesArray
+            Me.Rows.Add(rowProdukteRow)
+            Return rowProdukteRow
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function FindByID(ByVal ID As Integer) As PerdoruesRow
-            Return CType(Me.Rows.Find(New Object() {ID}),PerdoruesRow)
+        Public Function FindByID(ByVal ID As Integer) As ProdukteRow
+            Return CType(Me.Rows.Find(New Object() {ID}),ProdukteRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Overrides Function Clone() As Global.System.Data.DataTable
-            Dim cln As PerdoruesDataTable = CType(MyBase.Clone,PerdoruesDataTable)
+            Dim cln As ProdukteDataTable = CType(MyBase.Clone,ProdukteDataTable)
             cln.InitVars
             Return cln
         End Function
@@ -420,16 +420,16 @@ Partial Public Class StarBarDataSet
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Protected Overrides Function CreateInstance() As Global.System.Data.DataTable
-            Return New PerdoruesDataTable()
+            Return New ProdukteDataTable()
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Friend Sub InitVars()
             Me.columnID = MyBase.Columns("ID")
-            Me.columnEmri = MyBase.Columns("Emri")
-            Me.columnKodi = MyBase.Columns("Kodi")
-            Me.columnNiveli = MyBase.Columns("Niveli")
+            Me.columnEmriP = MyBase.Columns("EmriP")
+            Me.columnCmimiP = MyBase.Columns("CmimiP")
+            Me.columnSasiaP = MyBase.Columns("SasiaP")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -437,12 +437,12 @@ Partial Public Class StarBarDataSet
         Private Sub InitClass()
             Me.columnID = New Global.System.Data.DataColumn("ID", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnID)
-            Me.columnEmri = New Global.System.Data.DataColumn("Emri", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnEmri)
-            Me.columnKodi = New Global.System.Data.DataColumn("Kodi", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnKodi)
-            Me.columnNiveli = New Global.System.Data.DataColumn("Niveli", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnNiveli)
+            Me.columnEmriP = New Global.System.Data.DataColumn("EmriP", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnEmriP)
+            Me.columnCmimiP = New Global.System.Data.DataColumn("CmimiP", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnCmimiP)
+            Me.columnSasiaP = New Global.System.Data.DataColumn("SasiaP", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnSasiaP)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnID}, true))
             Me.columnID.AutoIncrement = true
             Me.columnID.AutoIncrementSeed = -1
@@ -450,37 +450,36 @@ Partial Public Class StarBarDataSet
             Me.columnID.AllowDBNull = false
             Me.columnID.ReadOnly = true
             Me.columnID.Unique = true
-            Me.columnEmri.AllowDBNull = false
-            Me.columnEmri.MaxLength = 255
-            Me.columnKodi.AllowDBNull = false
-            Me.columnKodi.MaxLength = 255
-            Me.columnNiveli.AllowDBNull = false
+            Me.columnEmriP.AllowDBNull = false
+            Me.columnEmriP.MaxLength = 40
+            Me.columnCmimiP.AllowDBNull = false
+            Me.columnSasiaP.AllowDBNull = false
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function NewPerdoruesRow() As PerdoruesRow
-            Return CType(Me.NewRow,PerdoruesRow)
+        Public Function NewProdukteRow() As ProdukteRow
+            Return CType(Me.NewRow,ProdukteRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Protected Overrides Function NewRowFromBuilder(ByVal builder As Global.System.Data.DataRowBuilder) As Global.System.Data.DataRow
-            Return New PerdoruesRow(builder)
+            Return New ProdukteRow(builder)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Protected Overrides Function GetRowType() As Global.System.Type
-            Return GetType(PerdoruesRow)
+            Return GetType(ProdukteRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Protected Overrides Sub OnRowChanged(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowChanged(e)
-            If (Not (Me.PerdoruesRowChangedEvent) Is Nothing) Then
-                RaiseEvent PerdoruesRowChanged(Me, New PerdoruesRowChangeEvent(CType(e.Row,PerdoruesRow), e.Action))
+            If (Not (Me.ProdukteRowChangedEvent) Is Nothing) Then
+                RaiseEvent ProdukteRowChanged(Me, New ProdukteRowChangeEvent(CType(e.Row,ProdukteRow), e.Action))
             End If
         End Sub
         
@@ -488,8 +487,8 @@ Partial Public Class StarBarDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Protected Overrides Sub OnRowChanging(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowChanging(e)
-            If (Not (Me.PerdoruesRowChangingEvent) Is Nothing) Then
-                RaiseEvent PerdoruesRowChanging(Me, New PerdoruesRowChangeEvent(CType(e.Row,PerdoruesRow), e.Action))
+            If (Not (Me.ProdukteRowChangingEvent) Is Nothing) Then
+                RaiseEvent ProdukteRowChanging(Me, New ProdukteRowChangeEvent(CType(e.Row,ProdukteRow), e.Action))
             End If
         End Sub
         
@@ -497,8 +496,8 @@ Partial Public Class StarBarDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Protected Overrides Sub OnRowDeleted(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowDeleted(e)
-            If (Not (Me.PerdoruesRowDeletedEvent) Is Nothing) Then
-                RaiseEvent PerdoruesRowDeleted(Me, New PerdoruesRowChangeEvent(CType(e.Row,PerdoruesRow), e.Action))
+            If (Not (Me.ProdukteRowDeletedEvent) Is Nothing) Then
+                RaiseEvent ProdukteRowDeleted(Me, New ProdukteRowChangeEvent(CType(e.Row,ProdukteRow), e.Action))
             End If
         End Sub
         
@@ -506,14 +505,14 @@ Partial Public Class StarBarDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Protected Overrides Sub OnRowDeleting(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowDeleting(e)
-            If (Not (Me.PerdoruesRowDeletingEvent) Is Nothing) Then
-                RaiseEvent PerdoruesRowDeleting(Me, New PerdoruesRowChangeEvent(CType(e.Row,PerdoruesRow), e.Action))
+            If (Not (Me.ProdukteRowDeletingEvent) Is Nothing) Then
+                RaiseEvent ProdukteRowDeleting(Me, New ProdukteRowChangeEvent(CType(e.Row,ProdukteRow), e.Action))
             End If
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub RemovePerdoruesRow(ByVal row As PerdoruesRow)
+        Public Sub RemoveProdukteRow(ByVal row As ProdukteRow)
             Me.Rows.Remove(row)
         End Sub
         
@@ -522,7 +521,7 @@ Partial Public Class StarBarDataSet
         Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
             Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
             Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
-            Dim ds As StarBarDataSet = New StarBarDataSet()
+            Dim ds As StarBarDataSet1 = New StarBarDataSet1()
             Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
             any1.Namespace = "http://www.w3.org/2001/XMLSchema"
             any1.MinOccurs = New Decimal(0)
@@ -540,7 +539,7 @@ Partial Public Class StarBarDataSet
             type.Attributes.Add(attribute1)
             Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
             attribute2.Name = "tableTypeName"
-            attribute2.FixedValue = "PerdoruesDataTable"
+            attribute2.FixedValue = "ProdukteDataTable"
             type.Attributes.Add(attribute2)
             type.Particle = sequence
             Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
@@ -587,59 +586,59 @@ Partial Public Class StarBarDataSet
     '''<summary>
     '''Represents strongly named DataRow class.
     '''</summary>
-    Partial Public Class PerdoruesRow
+    Partial Public Class ProdukteRow
         Inherits Global.System.Data.DataRow
         
-        Private tablePerdorues As PerdoruesDataTable
+        Private tableProdukte As ProdukteDataTable
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Friend Sub New(ByVal rb As Global.System.Data.DataRowBuilder)
             MyBase.New(rb)
-            Me.tablePerdorues = CType(Me.Table,PerdoruesDataTable)
+            Me.tableProdukte = CType(Me.Table,ProdukteDataTable)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property ID() As Integer
             Get
-                Return CType(Me(Me.tablePerdorues.IDColumn),Integer)
+                Return CType(Me(Me.tableProdukte.IDColumn),Integer)
             End Get
             Set
-                Me(Me.tablePerdorues.IDColumn) = value
+                Me(Me.tableProdukte.IDColumn) = value
             End Set
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property Emri() As String
+        Public Property EmriP() As String
             Get
-                Return CType(Me(Me.tablePerdorues.EmriColumn),String)
+                Return CType(Me(Me.tableProdukte.EmriPColumn),String)
             End Get
             Set
-                Me(Me.tablePerdorues.EmriColumn) = value
+                Me(Me.tableProdukte.EmriPColumn) = value
             End Set
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property Kodi() As String
+        Public Property CmimiP() As Integer
             Get
-                Return CType(Me(Me.tablePerdorues.KodiColumn),String)
+                Return CType(Me(Me.tableProdukte.CmimiPColumn),Integer)
             End Get
             Set
-                Me(Me.tablePerdorues.KodiColumn) = value
+                Me(Me.tableProdukte.CmimiPColumn) = value
             End Set
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property Niveli() As Integer
+        Public Property SasiaP() As Integer
             Get
-                Return CType(Me(Me.tablePerdorues.NiveliColumn),Integer)
+                Return CType(Me(Me.tableProdukte.SasiaPColumn),Integer)
             End Get
             Set
-                Me(Me.tablePerdorues.NiveliColumn) = value
+                Me(Me.tableProdukte.SasiaPColumn) = value
             End Set
         End Property
     End Class
@@ -648,16 +647,16 @@ Partial Public Class StarBarDataSet
     '''Row event argument class
     '''</summary>
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-    Public Class PerdoruesRowChangeEvent
+    Public Class ProdukteRowChangeEvent
         Inherits Global.System.EventArgs
         
-        Private eventRow As PerdoruesRow
+        Private eventRow As ProdukteRow
         
         Private eventAction As Global.System.Data.DataRowAction
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub New(ByVal row As PerdoruesRow, ByVal action As Global.System.Data.DataRowAction)
+        Public Sub New(ByVal row As ProdukteRow, ByVal action As Global.System.Data.DataRowAction)
             MyBase.New
             Me.eventRow = row
             Me.eventAction = action
@@ -665,7 +664,7 @@ Partial Public Class StarBarDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property Row() As PerdoruesRow
+        Public ReadOnly Property Row() As ProdukteRow
             Get
                 Return Me.eventRow
             End Get
@@ -681,7 +680,7 @@ Partial Public Class StarBarDataSet
     End Class
 End Class
 
-Namespace StarBarDataSetTableAdapters
+Namespace StarBarDataSet1TableAdapters
     
     '''<summary>
     '''Represents the connection and commands used to retrieve and save data.
@@ -692,7 +691,7 @@ Namespace StarBarDataSetTableAdapters
      Global.System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner"& _ 
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"),  _
      Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-    Partial Public Class PerdoruesTableAdapter
+    Partial Public Class ProdukteTableAdapter
         Inherits Global.System.ComponentModel.Component
         
         Private WithEvents _adapter As Global.System.Data.SqlClient.SqlDataAdapter
@@ -809,44 +808,44 @@ Namespace StarBarDataSetTableAdapters
             Me._adapter = New Global.System.Data.SqlClient.SqlDataAdapter()
             Dim tableMapping As Global.System.Data.Common.DataTableMapping = New Global.System.Data.Common.DataTableMapping()
             tableMapping.SourceTable = "Table"
-            tableMapping.DataSetTable = "Perdorues"
+            tableMapping.DataSetTable = "Produkte"
             tableMapping.ColumnMappings.Add("ID", "ID")
-            tableMapping.ColumnMappings.Add("Emri", "Emri")
-            tableMapping.ColumnMappings.Add("Kodi", "Kodi")
-            tableMapping.ColumnMappings.Add("Niveli", "Niveli")
+            tableMapping.ColumnMappings.Add("EmriP", "EmriP")
+            tableMapping.ColumnMappings.Add("CmimiP", "CmimiP")
+            tableMapping.ColumnMappings.Add("SasiaP", "SasiaP")
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
-            Me._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Perdorues] WHERE (([ID] = @Original_ID) AND ([Emri] = @Origina"& _ 
-                "l_Emri) AND ([Kodi] = @Original_Kodi) AND ([Niveli] = @Original_Niveli))"
+            Me._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Produkte] WHERE (([ID] = @Original_ID) AND ([EmriP] = @Origina"& _ 
+                "l_EmriP) AND ([CmimiP] = @Original_CmimiP) AND ([SasiaP] = @Original_SasiaP))"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Emri", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Emri", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Kodi", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Kodi", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Niveli", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Niveli", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_EmriP", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "EmriP", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_CmimiP", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CmimiP", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_SasiaP", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "SasiaP", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
-            Me._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Perdorues] ([Emri], [Kodi], [Niveli]) VALUES (@Emri, @Kodi, @N"& _ 
-                "iveli);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT ID, Emri, Kodi, Niveli FROM Perdorues WHERE (ID = SCOPE_IDENTITY"& _ 
-                "())"
+            Me._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Produkte] ([EmriP], [CmimiP], [SasiaP]) VALUES (@EmriP, @Cmimi"& _ 
+                "P, @SasiaP);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT ID, EmriP, CmimiP, SasiaP FROM Produkte WHERE (ID = SCOPE_I"& _ 
+                "DENTITY())"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Emri", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Emri", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Kodi", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Kodi", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Niveli", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Niveli", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@EmriP", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "EmriP", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@CmimiP", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CmimiP", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@SasiaP", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "SasiaP", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
-            Me._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[Perdorues] SET [Emri] = @Emri, [Kodi] = @Kodi, [Niveli] = @Niveli W"& _ 
-                "HERE (([ID] = @Original_ID) AND ([Emri] = @Original_Emri) AND ([Kodi] = @Origina"& _ 
-                "l_Kodi) AND ([Niveli] = @Original_Niveli));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT ID, Emri, Kodi, Niveli FROM "& _ 
-                "Perdorues WHERE (ID = @ID)"
+            Me._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[Produkte] SET [EmriP] = @EmriP, [CmimiP] = @CmimiP, [SasiaP] = @Sas"& _ 
+                "iaP WHERE (([ID] = @Original_ID) AND ([EmriP] = @Original_EmriP) AND ([CmimiP] ="& _ 
+                " @Original_CmimiP) AND ([SasiaP] = @Original_SasiaP));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT ID, EmriP, CmimiP"& _ 
+                ", SasiaP FROM Produkte WHERE (ID = @ID)"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Emri", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Emri", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Kodi", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Kodi", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Niveli", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Niveli", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@EmriP", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "EmriP", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@CmimiP", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CmimiP", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@SasiaP", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "SasiaP", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Emri", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Emri", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Kodi", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Kodi", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Niveli", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Niveli", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_EmriP", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "EmriP", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_CmimiP", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CmimiP", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_SasiaP", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "SasiaP", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ID", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "ID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
@@ -863,7 +862,7 @@ Namespace StarBarDataSetTableAdapters
             Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT ID, Emri, Kodi, Niveli FROM dbo.Perdorues"
+            Me._commandCollection(0).CommandText = "SELECT ID, EmriP, CmimiP, SasiaP FROM dbo.Produkte"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
@@ -871,7 +870,7 @@ Namespace StarBarDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
-        Public Overloads Overridable Function Fill(ByVal dataTable As StarBarDataSet.PerdoruesDataTable) As Integer
+        Public Overloads Overridable Function Fill(ByVal dataTable As StarBarDataSet1.ProdukteDataTable) As Integer
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
             If (Me.ClearBeforeFill = true) Then
                 dataTable.Clear
@@ -884,9 +883,9 @@ Namespace StarBarDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
-        Public Overloads Overridable Function GetData() As StarBarDataSet.PerdoruesDataTable
+        Public Overloads Overridable Function GetData() As StarBarDataSet1.ProdukteDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            Dim dataTable As StarBarDataSet.PerdoruesDataTable = New StarBarDataSet.PerdoruesDataTable()
+            Dim dataTable As StarBarDataSet1.ProdukteDataTable = New StarBarDataSet1.ProdukteDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
         End Function
@@ -894,15 +893,15 @@ Namespace StarBarDataSetTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataTable As StarBarDataSet.PerdoruesDataTable) As Integer
+        Public Overloads Overridable Function Update(ByVal dataTable As StarBarDataSet1.ProdukteDataTable) As Integer
             Return Me.Adapter.Update(dataTable)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataSet As StarBarDataSet) As Integer
-            Return Me.Adapter.Update(dataSet, "Perdorues")
+        Public Overloads Overridable Function Update(ByVal dataSet As StarBarDataSet1) As Integer
+            Return Me.Adapter.Update(dataSet, "Produkte")
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -923,19 +922,15 @@ Namespace StarBarDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
-        Public Overloads Overridable Function Delete(ByVal Original_ID As Integer, ByVal Original_Emri As String, ByVal Original_Kodi As String, ByVal Original_Niveli As Integer) As Integer
+        Public Overloads Overridable Function Delete(ByVal Original_ID As Integer, ByVal Original_EmriP As String, ByVal Original_CmimiP As Integer, ByVal Original_SasiaP As Integer) As Integer
             Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_ID,Integer)
-            If (Original_Emri Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("Original_Emri")
+            If (Original_EmriP Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("Original_EmriP")
             Else
-                Me.Adapter.DeleteCommand.Parameters(1).Value = CType(Original_Emri,String)
+                Me.Adapter.DeleteCommand.Parameters(1).Value = CType(Original_EmriP,String)
             End If
-            If (Original_Kodi Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("Original_Kodi")
-            Else
-                Me.Adapter.DeleteCommand.Parameters(2).Value = CType(Original_Kodi,String)
-            End If
-            Me.Adapter.DeleteCommand.Parameters(3).Value = CType(Original_Niveli,Integer)
+            Me.Adapter.DeleteCommand.Parameters(2).Value = CType(Original_CmimiP,Integer)
+            Me.Adapter.DeleteCommand.Parameters(3).Value = CType(Original_SasiaP,Integer)
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
             If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -955,18 +950,14 @@ Namespace StarBarDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert(ByVal Emri As String, ByVal Kodi As String, ByVal Niveli As Integer) As Integer
-            If (Emri Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("Emri")
+        Public Overloads Overridable Function Insert(ByVal EmriP As String, ByVal CmimiP As Integer, ByVal SasiaP As Integer) As Integer
+            If (EmriP Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("EmriP")
             Else
-                Me.Adapter.InsertCommand.Parameters(0).Value = CType(Emri,String)
+                Me.Adapter.InsertCommand.Parameters(0).Value = CType(EmriP,String)
             End If
-            If (Kodi Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("Kodi")
-            Else
-                Me.Adapter.InsertCommand.Parameters(1).Value = CType(Kodi,String)
-            End If
-            Me.Adapter.InsertCommand.Parameters(2).Value = CType(Niveli,Integer)
+            Me.Adapter.InsertCommand.Parameters(1).Value = CType(CmimiP,Integer)
+            Me.Adapter.InsertCommand.Parameters(2).Value = CType(SasiaP,Integer)
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
             If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -986,30 +977,22 @@ Namespace StarBarDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal Emri As String, ByVal Kodi As String, ByVal Niveli As Integer, ByVal Original_ID As Integer, ByVal Original_Emri As String, ByVal Original_Kodi As String, ByVal Original_Niveli As Integer, ByVal ID As Integer) As Integer
-            If (Emri Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("Emri")
+        Public Overloads Overridable Function Update(ByVal EmriP As String, ByVal CmimiP As Integer, ByVal SasiaP As Integer, ByVal Original_ID As Integer, ByVal Original_EmriP As String, ByVal Original_CmimiP As Integer, ByVal Original_SasiaP As Integer, ByVal ID As Integer) As Integer
+            If (EmriP Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("EmriP")
             Else
-                Me.Adapter.UpdateCommand.Parameters(0).Value = CType(Emri,String)
+                Me.Adapter.UpdateCommand.Parameters(0).Value = CType(EmriP,String)
             End If
-            If (Kodi Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("Kodi")
-            Else
-                Me.Adapter.UpdateCommand.Parameters(1).Value = CType(Kodi,String)
-            End If
-            Me.Adapter.UpdateCommand.Parameters(2).Value = CType(Niveli,Integer)
+            Me.Adapter.UpdateCommand.Parameters(1).Value = CType(CmimiP,Integer)
+            Me.Adapter.UpdateCommand.Parameters(2).Value = CType(SasiaP,Integer)
             Me.Adapter.UpdateCommand.Parameters(3).Value = CType(Original_ID,Integer)
-            If (Original_Emri Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("Original_Emri")
+            If (Original_EmriP Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("Original_EmriP")
             Else
-                Me.Adapter.UpdateCommand.Parameters(4).Value = CType(Original_Emri,String)
+                Me.Adapter.UpdateCommand.Parameters(4).Value = CType(Original_EmriP,String)
             End If
-            If (Original_Kodi Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("Original_Kodi")
-            Else
-                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(Original_Kodi,String)
-            End If
-            Me.Adapter.UpdateCommand.Parameters(6).Value = CType(Original_Niveli,Integer)
+            Me.Adapter.UpdateCommand.Parameters(5).Value = CType(Original_CmimiP,Integer)
+            Me.Adapter.UpdateCommand.Parameters(6).Value = CType(Original_SasiaP,Integer)
             Me.Adapter.UpdateCommand.Parameters(7).Value = CType(ID,Integer)
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
             If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
@@ -1030,8 +1013,8 @@ Namespace StarBarDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal Emri As String, ByVal Kodi As String, ByVal Niveli As Integer, ByVal Original_ID As Integer, ByVal Original_Emri As String, ByVal Original_Kodi As String, ByVal Original_Niveli As Integer) As Integer
-            Return Me.Update(Emri, Kodi, Niveli, Original_ID, Original_Emri, Original_Kodi, Original_Niveli, Original_ID)
+        Public Overloads Overridable Function Update(ByVal EmriP As String, ByVal CmimiP As Integer, ByVal SasiaP As Integer, ByVal Original_ID As Integer, ByVal Original_EmriP As String, ByVal Original_CmimiP As Integer, ByVal Original_SasiaP As Integer) As Integer
+            Return Me.Update(EmriP, CmimiP, SasiaP, Original_ID, Original_EmriP, Original_CmimiP, Original_SasiaP, Original_ID)
         End Function
     End Class
     
@@ -1048,7 +1031,7 @@ Namespace StarBarDataSetTableAdapters
         
         Private _updateOrder As UpdateOrderOption
         
-        Private _perdoruesTableAdapter As PerdoruesTableAdapter
+        Private _produkteTableAdapter As ProdukteTableAdapter
         
         Private _backupDataSetBeforeUpdate As Boolean
         
@@ -1070,12 +1053,12 @@ Namespace StarBarDataSetTableAdapters
          Global.System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso"& _ 
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3"& _ 
             "a", "System.Drawing.Design.UITypeEditor")>  _
-        Public Property PerdoruesTableAdapter() As PerdoruesTableAdapter
+        Public Property ProdukteTableAdapter() As ProdukteTableAdapter
             Get
-                Return Me._perdoruesTableAdapter
+                Return Me._produkteTableAdapter
             End Get
             Set
-                Me._perdoruesTableAdapter = value
+                Me._produkteTableAdapter = value
             End Set
         End Property
         
@@ -1098,9 +1081,9 @@ Namespace StarBarDataSetTableAdapters
                 If (Not (Me._connection) Is Nothing) Then
                     Return Me._connection
                 End If
-                If ((Not (Me._perdoruesTableAdapter) Is Nothing)  _
-                            AndAlso (Not (Me._perdoruesTableAdapter.Connection) Is Nothing)) Then
-                    Return Me._perdoruesTableAdapter.Connection
+                If ((Not (Me._produkteTableAdapter) Is Nothing)  _
+                            AndAlso (Not (Me._produkteTableAdapter.Connection) Is Nothing)) Then
+                    Return Me._produkteTableAdapter.Connection
                 End If
                 Return Nothing
             End Get
@@ -1115,7 +1098,7 @@ Namespace StarBarDataSetTableAdapters
         Public ReadOnly Property TableAdapterInstanceCount() As Integer
             Get
                 Dim count As Integer = 0
-                If (Not (Me._perdoruesTableAdapter) Is Nothing) Then
+                If (Not (Me._produkteTableAdapter) Is Nothing) Then
                     count = (count + 1)
                 End If
                 Return count
@@ -1127,14 +1110,14 @@ Namespace StarBarDataSetTableAdapters
         '''</summary>
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Private Function UpdateUpdatedRows(ByVal dataSet As StarBarDataSet, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow), ByVal allAddedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
+        Private Function UpdateUpdatedRows(ByVal dataSet As StarBarDataSet1, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow), ByVal allAddedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
             Dim result As Integer = 0
-            If (Not (Me._perdoruesTableAdapter) Is Nothing) Then
-                Dim updatedRows() As Global.System.Data.DataRow = dataSet.Perdorues.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+            If (Not (Me._produkteTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.Produkte.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
                 updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
                 If ((Not (updatedRows) Is Nothing)  _
                             AndAlso (0 < updatedRows.Length)) Then
-                    result = (result + Me._perdoruesTableAdapter.Update(updatedRows))
+                    result = (result + Me._produkteTableAdapter.Update(updatedRows))
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
@@ -1146,13 +1129,13 @@ Namespace StarBarDataSetTableAdapters
         '''</summary>
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Private Function UpdateInsertedRows(ByVal dataSet As StarBarDataSet, ByVal allAddedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
+        Private Function UpdateInsertedRows(ByVal dataSet As StarBarDataSet1, ByVal allAddedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
             Dim result As Integer = 0
-            If (Not (Me._perdoruesTableAdapter) Is Nothing) Then
-                Dim addedRows() As Global.System.Data.DataRow = dataSet.Perdorues.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+            If (Not (Me._produkteTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.Produkte.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
                 If ((Not (addedRows) Is Nothing)  _
                             AndAlso (0 < addedRows.Length)) Then
-                    result = (result + Me._perdoruesTableAdapter.Update(addedRows))
+                    result = (result + Me._produkteTableAdapter.Update(addedRows))
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
@@ -1164,13 +1147,13 @@ Namespace StarBarDataSetTableAdapters
         '''</summary>
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Private Function UpdateDeletedRows(ByVal dataSet As StarBarDataSet, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
+        Private Function UpdateDeletedRows(ByVal dataSet As StarBarDataSet1, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
             Dim result As Integer = 0
-            If (Not (Me._perdoruesTableAdapter) Is Nothing) Then
-                Dim deletedRows() As Global.System.Data.DataRow = dataSet.Perdorues.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+            If (Not (Me._produkteTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.Produkte.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
                 If ((Not (deletedRows) Is Nothing)  _
                             AndAlso (0 < deletedRows.Length)) Then
-                    result = (result + Me._perdoruesTableAdapter.Update(deletedRows))
+                    result = (result + Me._produkteTableAdapter.Update(deletedRows))
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If
@@ -1208,15 +1191,15 @@ Namespace StarBarDataSetTableAdapters
         '''</summary>
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overridable Function UpdateAll(ByVal dataSet As StarBarDataSet) As Integer
+        Public Overridable Function UpdateAll(ByVal dataSet As StarBarDataSet1) As Integer
             If (dataSet Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("dataSet")
             End If
             If (dataSet.HasChanges = false) Then
                 Return 0
             End If
-            If ((Not (Me._perdoruesTableAdapter) Is Nothing)  _
-                        AndAlso (Me.MatchTableAdapterConnection(Me._perdoruesTableAdapter.Connection) = false)) Then
+            If ((Not (Me._produkteTableAdapter) Is Nothing)  _
+                        AndAlso (Me.MatchTableAdapterConnection(Me._produkteTableAdapter.Connection) = false)) Then
                 Throw New Global.System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s"& _ 
                         "tring.")
             End If
@@ -1252,13 +1235,13 @@ Namespace StarBarDataSetTableAdapters
             Try 
                 '---- Prepare for update -----------
                 '
-                If (Not (Me._perdoruesTableAdapter) Is Nothing) Then
-                    revertConnections.Add(Me._perdoruesTableAdapter, Me._perdoruesTableAdapter.Connection)
-                    Me._perdoruesTableAdapter.Connection = CType(workConnection,Global.System.Data.SqlClient.SqlConnection)
-                    Me._perdoruesTableAdapter.Transaction = CType(workTransaction,Global.System.Data.SqlClient.SqlTransaction)
-                    If Me._perdoruesTableAdapter.Adapter.AcceptChangesDuringUpdate Then
-                        Me._perdoruesTableAdapter.Adapter.AcceptChangesDuringUpdate = false
-                        adaptersWithAcceptChangesDuringUpdate.Add(Me._perdoruesTableAdapter.Adapter)
+                If (Not (Me._produkteTableAdapter) Is Nothing) Then
+                    revertConnections.Add(Me._produkteTableAdapter, Me._produkteTableAdapter.Connection)
+                    Me._produkteTableAdapter.Connection = CType(workConnection,Global.System.Data.SqlClient.SqlConnection)
+                    Me._produkteTableAdapter.Transaction = CType(workTransaction,Global.System.Data.SqlClient.SqlTransaction)
+                    If Me._produkteTableAdapter.Adapter.AcceptChangesDuringUpdate Then
+                        Me._produkteTableAdapter.Adapter.AcceptChangesDuringUpdate = false
+                        adaptersWithAcceptChangesDuringUpdate.Add(Me._produkteTableAdapter.Adapter)
                     End If
                 End If
                 '
@@ -1321,9 +1304,9 @@ Namespace StarBarDataSetTableAdapters
                 If workConnOpened Then
                     workConnection.Close
                 End If
-                If (Not (Me._perdoruesTableAdapter) Is Nothing) Then
-                    Me._perdoruesTableAdapter.Connection = CType(revertConnections(Me._perdoruesTableAdapter),Global.System.Data.SqlClient.SqlConnection)
-                    Me._perdoruesTableAdapter.Transaction = Nothing
+                If (Not (Me._produkteTableAdapter) Is Nothing) Then
+                    Me._produkteTableAdapter.Connection = CType(revertConnections(Me._produkteTableAdapter),Global.System.Data.SqlClient.SqlConnection)
+                    Me._produkteTableAdapter.Transaction = Nothing
                 End If
                 If (0 < adaptersWithAcceptChangesDuringUpdate.Count) Then
                     Dim adapters((adaptersWithAcceptChangesDuringUpdate.Count) - 1) As Global.System.Data.Common.DataAdapter
